@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Sketch Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Arduino Sketch Management</h1>
+    </header>
+    <main>
+        <section>
+            <button id="showSketchBtn" class="btn">Show Sketch</button>
+            <pre id="sketchContent"></pre>
+        </section>
+        <section>
+            <button id="compileBtn" class="btn">Compile Sketch</button>
+        </section>
+        <section>
+            <button id="listDevicesBtn" class="btn">List Devices</button>
+            <select id="devicesList" class="dropdown"></select>
+            <button id="connectDeviceBtn" class="btn">Connect Device</button>
+            <button id="flashFirmwareBtn" class="btn">Flash Firmware</button>
+        </section>
+        <section>
+            <button id="testButton" class="btn">Test Button</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
