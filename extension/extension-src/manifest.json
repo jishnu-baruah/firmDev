@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "key": "knldjmfmopnpolahpmmgbagdohdnhkik",
+  "name": "FirmDev Uploaded Extension",
+  "version": "1.0",
+  "description": "Upload compiled code from server to selected board.",
+  "action": {
+    "default_title": "FirmDev Uploaded Extension",
+    "default_popup": "main.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": ["nativeMessaging"]
+}
