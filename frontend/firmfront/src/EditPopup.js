@@ -56,3 +56,4 @@ const EditPopup = ({ item, properties, setProperties, onClose, onSave }) => {
 };
 
 export default EditPopup;
+
