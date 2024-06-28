@@ -1,0 +1,9 @@
+{
+  "name": "com.firmdev.uploaded_extension",
+  "description": "FirmDev Native Messaging Host",
+  "path": "start_native_host.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://ballcmidfhfpocaclagpejbbdcepijim/"
+  ]
+}
