@@ -1,50 +1,3 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-
-
-
-
-
-
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -57,15 +10,6 @@ body {
   height: 100vh;
 }
 
-.sidebar {
-  width: 200px;
-  padding: 16px;
-  background-color: #fff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-}
-
 .draggable-box {
   padding: 8px;
   border: 1px solid black;
@@ -74,26 +18,6 @@ body {
   cursor: grab;
 }
 
-.drop-zone-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-}
-
-.drop-zone {
-  width: 90%;
-  height: 90%;
-  padding: 30px;
-  border: 2px dashed white;
-  background-color: #333;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .context-menu {
   position: absolute;
@@ -120,11 +44,6 @@ body {
 }
 
 
-.sidebar {
-  width: 25%;
-  padding-right: 20px;
-}
-
 .context-menu {
   list-style-type: none;
   position: absolute;
@@ -141,38 +60,31 @@ body {
   white-space: nowrap;
 }
 
-
 .context-menu li:hover {
   background-color: #f1f1f1;
 }
-
-.app-container {
-  display: flex;
-  height: 100vh;
-}
-
-.sidebar {
-  width: 20%;
-  background-color: #f0f0f0;
+.context-menu {
+  list-style-type: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   padding: 10px;
-  /* overflow-y: auto;  */
+  border-radius: 4px;
+  margin: 0;
+  z-index: 1000;
 }
 
-.drop-zone-container {
-  width: 60%;
-  background-color: #333;
-  position: relative;
-}
+
 
 .right-column {
   width: 20%;
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-color: #171717;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
-
 .show-sketch-button, .compile-button {
   margin: 20px 0;
   padding: 10px 20px;
@@ -191,8 +103,8 @@ body {
 .code-display {
   flex-grow: 1;
   width: 100%;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: #333;
+  border: 1px solid #333;
   margin: 20px 0;
   padding: 10px;
   overflow-y: auto;
@@ -208,20 +120,16 @@ hr {
 
 
 
-
-
-/* App.css */
-
-.app-container {
-  display: flex;
-  height: 100vh;
-}
-
 .sidebar {
-  background-color: #fff;
-  padding: 20px;
+  background-color: #171717;
+  padding: 15px;
   width: 300px;
+  padding-top: 30px;
+  overflow-y: auto; 
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
 }
 
 .sidebar h2 {
@@ -230,36 +138,25 @@ hr {
   font-weight: bold;
 }
 
+
 .sidebar select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 8px;
+  padding-bottom: 2.5vh;
+  margin-bottom: 2.5vh;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 4px;
-  background-color: #f9f9f9;
+  background-color: #171717; /* Default background color */
+  color: white;
+  border-color: #171717;
+  border-bottom-color: white;
   transition: background-color 0.2s ease;
 }
 
 .sidebar select:focus {
-  background-color: #fff;
+  background-color: #333; /* Background color on focus */
   border-color: #aaa;
-}
-
-.drop-zone-container {
-  flex-grow: 1;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.drop-zone {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #333;
 }
 
 .drop-text {
@@ -272,25 +169,14 @@ hr {
   transform: translate(-50%, -50%);
 }
 .dropped-item {
-  color: black;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid white;
-  border-radius: 4px;
-  background-color: #f0f0f0;
-  cursor: pointer;
-} 
-
-
-.dropped-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
   padding: 10px;
+  color: black;
   border-radius: 4px;
   margin: 10px;
   cursor: move;
   display: inline-block;
 }
+
 
 .context-menu {
   position: absolute;
@@ -308,18 +194,10 @@ hr {
   background-color: #eee;
 }
 
-.right-column {
-  width: 300px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
 .right-column button {
-  background-color: #fff;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
   border: 1px solid #ddd;
   padding: 10px 20px;
   margin: 10px 0;
@@ -330,10 +208,189 @@ hr {
 .right-column button:hover {
   background-color: #eee;
 }
+.context-menu li:hover {
+  background-color: #eee;
+}
+
+
+.sidebar select:focus {
+  background-color: #333;
+  border-color: #aaa;
+}
+
+.show-sketch-button, .compile-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.show-sketch-button:hover, .compile-button:hover {
+  background-color: #f0f0f0;
+}
 
 .separator {
   width: 100%;
   height: 1px;
   background-color: #ddd;
   margin: 20px 0;
+  border-top: 1px solid #ccc;
+
 }
+
+.sidebar label {
+  display: none;
+}
+
+.drop-zone {
+  width: 100%;
+  height: auto;
+  background-color: #333;
+  background-image: radial-gradient(circle, #444 1px, transparent 1px);
+  background-size: 20px 20px; 
+  color: white;
+  color: white;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.drop-zone-container {
+  flex-grow: 1;
+  width: 75%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  color: white;
+
+}
+
+.hhhh{
+  color: white;
+  font-weight: bolder;
+  display: flex; 
+  /* justify/-content: center;  */
+  padding-bottom: 5vh;
+  align-items: center;
+  padding-left: 40px;
+}
+
+
+
+/* Add these styles to your existing App.css */
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.separator {
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.right-column h2 {
+  color: white; 
+}
+
+.right-column ul {
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.right-column li {
+  margin-bottom: 5px;
+  color: white; 
+  cursor: pointer; 
+  transition: opacity 0.3s; 
+  padding-bottom: 20px;
+}
+
+.right-column li:hover {
+  opacity: 0.5; 
+}
+
+
+.app-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.drop-zone-container {
+  width: 60%;
+  position: relative;
+  padding-bottom: 60px; /* Add space for the bottom bar */
+}
+
+.right-column {
+  width: 20%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  /* border-top: 1px solid #ccc; */
+}
+
+.search-bar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  /* border: 1px solid #484848; */
+  border-radius: 100px;
+  margin-right: 10px;
+  color: white;
+  background-color: #484848;
+}
+
+.generate-button {
+  background-color: #585858;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.generate-button:hover {
+  background-color: #484848;
+}
+.search-input::placeholder {
+  color: #B8B8B8;
+  font-weight:500;
+}
+
