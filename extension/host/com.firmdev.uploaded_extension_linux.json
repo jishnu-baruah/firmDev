@@ -1,0 +1,9 @@
+{
+    "name": "com.firmdev.uploaded_extension",
+    "description": "FirmDev Native Messaging Host",
+    "path": "./firmdev_native_host.py",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/"
+    ]
+}
