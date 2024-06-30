@@ -1,0 +1,38 @@
+/* Modal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    position: relative; /* Added to ensure the close button is positioned correctly */
+    background-color: #333; /* Adjust the background color as needed */
+    padding: 20px;
+    border-radius: 15px; /* Adjust this value to make the edges curvier */
+    max-width: 500px;
+    width: 100%;
+    color: white;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-content {
+    margin-top: 20px;
+}
