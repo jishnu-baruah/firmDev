@@ -1,4 +1,4 @@
-# Hackathon Project: No-Code Firmware Development Platform
+# FirmDev: No-Code Firmware Development Platform
 
 ## Project Structure
 
