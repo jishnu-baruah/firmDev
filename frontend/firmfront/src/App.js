@@ -1,7 +1,7 @@
-
 // import React, { useState, useRef } from 'react';
 // import DropZone from './DropZone';
 // import EditPopup from './EditPopup';
+
 // import hardwareCategories from './hardwareCategories';
 // import { generateUniqueId } from './utils';
 // import Draggable from 'react-draggable';
@@ -17,6 +17,7 @@
 //   const [contextMenu, setContextMenu] = useState({ isVisible: false, position: { x: 0, y: 0 }, itemId: null });
 //   const [editingItem, setEditingItem] = useState(null);
 //   const [properties, setProperties] = useState({ name: '', pin: '', vcc: '', gnd: '' });
+//   // eslint-disable-next-line
 //   const [showDummyParagraph, setShowDummyParagraph] = useState(false);
 //   const dropZoneRef = useRef(null);
 //   const [sketchContent, setSketchContent] = useState('');
@@ -65,7 +66,8 @@
 //   };
 
 //   const handleGenerate = () => {
-//     alert(`Generating sketch for: ${searchTerm}`);
+//     // alert(`Generating sketch for: ${searchTerm}`);
+//     alert(`Click on the "Show Sketch" button to view the code`);
 //     // Add your logic to handle the search term and generate the sketch
 //   };
 
@@ -161,6 +163,8 @@
 
 
 
+
+
 import React, { useState, useRef } from 'react';
 import DropZone from './DropZone';
 import EditPopup from './EditPopup';
@@ -179,7 +183,6 @@ const App = () => {
   const [contextMenu, setContextMenu] = useState({ isVisible: false, position: { x: 0, y: 0 }, itemId: null });
   const [editingItem, setEditingItem] = useState(null);
   const [properties, setProperties] = useState({ name: '', pin: '', vcc: '', gnd: '' });
-  const [showDummyParagraph, setShowDummyParagraph] = useState(false);
   const dropZoneRef = useRef(null);
   const [sketchContent, setSketchContent] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -227,16 +230,13 @@ const App = () => {
   };
 
   const handleGenerate = () => {
-    setIsModalOpen(true); // Open the modal instead of alert
-    // Optionally, you can perform additional logic here before opening the modal
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+    // alert(`Generating sketch for: ${searchTerm}`);
+    alert(`Click on the "Show Sketch" button to view the code`);
+    // Add your logic to handle the search term and generate the sketch
   };
 
   return (
-    <div className="app-container" onClick={() => setContextMenu({ isVisible: false, itemId: null })}>
+    <div className="app-container">
       <div className="sidebar">
         <h1 className="hhhh">Draw your Sketch!!</h1>
         {hardwareCategories.map((category, index) => (
@@ -314,10 +314,9 @@ const App = () => {
           }}
         />
       )}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className="modal-content">
-          <p>Generating sketch for: <strong>{searchTerm}</strong></p>
-          {/* Add more content or actions as needed */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="code-display">
+          <pre>{sketchContent}</pre>
         </div>
       </Modal>
     </div>

@@ -394,3 +394,30 @@ hr {
   font-weight:500;
 }
 
+
+
+
+
+
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+}
+
+.drop-zone-container {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  padding: 20px;
+}
+
+.right-column {
+  width: 300px;
+  padding: 20px;
+}
