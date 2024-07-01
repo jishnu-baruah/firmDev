@@ -19,36 +19,26 @@ Make sure you have the following installed on your system:
 - Arduino CLI
 - Python
 
-### Setting Up the Backend
+### Installing Dependencies
 
-1. Navigate to the `backend` directory:
+1. Clone the repository:
     ```sh
-    cd backend
+    git clone https://github.com/jishnu-baruah/firmDev.git
     ```
 
-2. Install the necessary dependencies:
+2. Navigate to the project directory:
     ```sh
-    npm install
+    cd firmDev
     ```
 
-3. Start the backend server:
-    ```sh
-    npm start
-    ```
-
-### Setting Up the Frontend
-
-1. Navigate to the `frontend/firmfront` directory:
-    ```sh
-    cd frontend/firmfront
-    ```
-
-2. Install the necessary dependencies:
+3. Install the necessary dependencies for the root, backend, and frontend directories:
     ```sh
     npm install
     ```
 
-3. Start the frontend server:
+### Starting the Servers
+
+1. Start both the backend and frontend servers concurrently:
     ```sh
     npm start
     ```
