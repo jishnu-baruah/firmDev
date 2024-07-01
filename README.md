@@ -1,126 +1,134 @@
-# <img src="./logo.jpg" alt="FirmDev Logo" width="200" height="200"> FirmDev: No-Code Firmware Development Platform
+<div>
+  <img src="./logo.jpg" alt="FirmDev Logo" width="200" height="200">
+  <h1>FirmDev: No-Code Firmware Development Platform</h1>
 
-## Project Structure
+  <h2>Project Structure</h2>
 
-This repository contains the following main folders:
+  <p>This repository contains the following main folders:</p>
 
-- **backend**: Contains the server-side code.
-- **frontend**: Contains the client-side code.
-- **extension**: Contains the Chrome extension.
-- **generator**: Contains the code for generating firmware.
+  <ul>
+    <li><strong>backend</strong>: Contains the server-side code.</li>
+    <li><strong>frontend</strong>: Contains the client-side code.</li>
+    <li><strong>extension</strong>: Contains the Chrome extension.</li>
+    <li><strong>generator</strong>: Contains the code for generating firmware.</li>
+  </ul>
 
-## Getting Started
+  <h2>Getting Started</h2>
 
-### Prerequisites
+  <h3>Prerequisites</h3>
 
-Make sure you have the following installed on your system:
+  <p>Make sure you have the following installed on your system:</p>
 
-- Node.js and npm
-- Arduino CLI
-- Python
+  <ul>
+    <li>Node.js and npm</li>
+    <li>Arduino CLI</li>
+    <li>Python</li>
+  </ul>
 
-### Setting Up the Backend
+  <h3>Cloning the Repository</h3>
 
-1. Navigate to the `backend` directory:
-    ```sh
-    cd backend
-    ```
+  <p>Clone this repository to your local machine:</p>
 
-2. Install the necessary dependencies:
-    ```sh
-    npm install
-    ```
+  <pre><code>git clone https://github.com/yourusername/FirmDev.git
+cd FirmDev
+</code></pre>
 
-3. Start the backend server:
-    ```sh
-    npm start
-    ```
+  <h3>Setting Up</h3>
 
-### Setting Up the Frontend
+  <ol>
+    <li>Install dependencies for all parts of the project:</li>
+  </ol>
 
-1. Navigate to the `frontend/firmfront` directory:
-    ```sh
-    cd frontend/firmfront
-    ```
+  <pre><code>npm install
+</code></pre>
 
-2. Install the necessary dependencies:
-    ```sh
-    npm install
-    ```
+  <ol start="2">
+    <li>Start the backend and frontend servers concurrently:</li>
+  </ol>
 
-3. Start the frontend server:
-    ```sh
-    npm start
-    ```
+  <pre><code>npm start
+</code></pre>
 
-### Setting Up the Chrome Extension
+  <h3>Setting Up the Chrome Extension</h3>
 
-#### Installing the Host Application (Windows)
+  <h4>Installing the Host Application (Windows)</h4>
 
-1. Navigate to the `extension/host` directory:
-    ```sh
-    cd extension/host
-    ```
+  <ol>
+    <li>Navigate to the <code>extension/host</code> directory:</li>
+  </ol>
 
-2. Run the installation script:
-    ```sh
-    ./install.bat
-    ```
+  <pre><code>cd extension/host
+</code></pre>
 
-#### Adding the Extension to Chrome
+  <ol start="2">
+    <li>Run the installation script:</li>
+  </ol>
 
-1. Open Chrome and navigate to `chrome://extensions/`.
+  <pre><code>./install.bat
+</code></pre>
 
-2. Enable "Developer mode" in the top right corner.
+  <h4>Adding the Extension to Chrome</h4>
 
-3. Click "Load unpacked" and select the `extension/extension-src` directory.
+  <ol>
+    <li>Open Chrome and navigate to <code>chrome://extensions/</code>.</li>
+    <li>Enable "Developer mode" in the top right corner.</li>
+    <li>Click "Load unpacked" and select the <code>extension/extension-src</code> directory.</li>
+  </ol>
 
-### Adding Gemini API Key
+  <h3>Adding Gemini API Key</h3>
 
-To use Gemini, you need to add your API key to the `.env` file in the `backend` directory.
+  <p>To use Gemini, you need to add your API key to the <code>.env</code> file in the <code>backend</code> directory.</p>
 
-1. Create a `.env` file in the `backend` directory if it doesn't already exist.
+  <ol>
+    <li>Create a <code>.env</code> file in the <code>backend</code> directory if it doesn't already exist.</li>
+    <li>Add the following line to the <code>.env</code> file, replacing <code>API_KEY</code> with your actual API key:</li>
+  </ol>
 
-2. Add the following line to the `.env` file, replacing `API_KEY` with your actual API key:
-    ```sh
-    API_KEY=YOUR_GEMINI_API_KEY
-    ```
+  <pre><code>API_KEY=YOUR_GEMINI_API_KEY
+</code></pre>
 
-## Using the Upload Function(under development)
+  <h2>Using the Upload Function (under development)</h2>
 
-To use the upload function, ensure you have Arduino CLI and Python installed on your system.
+  <p>To use the upload function, ensure you have Arduino CLI and Python installed on your system.</p>
 
-1. Open the web application and select the hardware components and settings.
+  <ol>
+    <li>Open the web application and select the hardware components and settings.</li>
+    <li>Generate the firmware code.</li>
+    <li>Connect your microcontroller device via USB.</li>
+    <li>Use the Chrome extension to upload the generated firmware directly to the connected device.</li>
+  </ol>
 
-2. Generate the firmware code.
+  <h2>Contributing</h2>
 
-3. Connect your microcontroller device via USB.
+  <p>We welcome contributions to this project. Please follow these steps:</p>
 
-4. Use the Chrome-extension to upload the generated firmware directly to the connected device.
+  <ol>
+    <li>Fork the repository.</li>
+    <li>Create a new branch:</li>
+  </ol>
 
-## Contributing
+  <pre><code>git checkout -b feature-branch
+</code></pre>
 
-We welcome contributions to this project. Please follow these steps:
+  <ol start="3">
+    <li>Make your changes and commit them:</li>
+  </ol>
 
-1. Fork the repository.
+  <pre><code>git commit -m "Description of changes"
+</code></pre>
 
-2. Create a new branch:
-    ```sh
-    git checkout -b feature-branch
-    ```
+  <ol start="4">
+    <li>Push to the branch:</li>
+  </ol>
 
-3. Make your changes and commit them:
-    ```sh
-    git commit -m "Description of changes"
-    ```
+  <pre><code>git push origin feature-branch
+</code></pre>
 
-4. Push to the branch:
-    ```sh
-    git push origin feature-branch
-    ```
+  <ol start="5">
+    <li>Create a pull request on GitHub.</li>
+  </ol>
 
-5. Create a pull request on GitHub.
+  <h2>License</h2>
 
-## License
-
-This project is licensed under the MIT License.
+  <p>This project is licensed under the MIT License.</p>
+</div>
