@@ -43,7 +43,7 @@ router.post('/generate', async (req, res) => {
         return res.status(400).send('Component data and project details are required');
     }
 
-    const prompt = `Generate sketch code for the following component data and project details:
+    const prompt = `Generate arduino sketch code for the following component data and project details:
     Component Data: ${JSON.stringify(componentData)}
     Project Details: ${projectDetails}`;
 
