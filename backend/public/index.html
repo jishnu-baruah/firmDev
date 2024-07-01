@@ -14,20 +14,25 @@
     </header>
     <main>
         <section>
-            <button id="showSketchBtn" class="btn">Show Sketch</button>
             <pre id="sketchContent"></pre>
         </section>
         <section>
+            <button id="showSketchBtn" class="btn">Show Sketch</button>
             <button id="compileBtn" class="btn">Compile Sketch</button>
         </section>
-        <section>
+        <!-- <section>
             <button id="listDevicesBtn" class="btn">List Devices</button>
             <select id="devicesList" class="dropdown"></select>
             <button id="connectDeviceBtn" class="btn">Connect Device</button>
             <button id="flashFirmwareBtn" class="btn">Flash Firmware</button>
-        </section>
+        </section> -->
         <section>
-            <button id="testButton" class="btn">Test Button</button>
+            <h2>Generate Sketch</h2>
+            <label for="componentData">Component Data:</label>
+            <textarea id="componentData" rows="4" cols="50"></textarea>
+            <label for="projectDetails">Project Details:</label>
+            <textarea id="projectDetails" rows="4" cols="50"></textarea>
+            <button id="generateSketchBtn" class="btn">Generate Sketch</button>
         </section>
     </main>
     <script src="script.js"></script>

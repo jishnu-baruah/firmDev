@@ -27,6 +27,6 @@ app.get('/', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    const ipAddress = '192.168.231.82';
+    const ipAddress = 'localhost';
     console.log(`Server is running on http://${ipAddress}:${port}`);
 });

@@ -2,12 +2,10 @@ const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
 const { exec } = require('child_process');
-
+const { generateContent } = require('../genModel/gemini');
 const router = express.Router();
 
 router.use(express.json());
-
-
 
 router.get('/sketch-content', async (req, res) => {
     try {
@@ -19,17 +17,12 @@ router.get('/sketch-content', async (req, res) => {
         res.status(500).send('Error fetching sketch content');
     }
 });
-// Define route for /compile
 
 router.get('/compile', (req, res) => {
-    // Paths to your compile script and sketch file
     const scriptPath = './compile.sh';
     const sketchPath = './sketch/sketch.ino';
-
-    // Construct the full command to execute
     const command = `${scriptPath} ${sketchPath}`;
 
-    // Execute the command
     exec(command, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing the command: ${error}`);
@@ -40,5 +33,30 @@ router.get('/compile', (req, res) => {
         res.send('Sketch compiled successfully!');
     });
 });
+
+// New POST method to handle componentData and projectDetails
+router.post('/generate', async (req, res) => {
+
+    const { componentData, projectDetails } = req.body;
+    console.log("gen..")
+    if (!componentData && !projectDetails) {
+        return res.status(400).send('Component data and project details are required');
+    }
+
+    const prompt = `Generate sketch code for the following component data and project details:
+    Component Data: ${JSON.stringify(componentData)}
+    Project Details: ${projectDetails}`;
+
+    try {
+        const generatedSketch = await generateContent(prompt);
+        const sketchPath = path.join(__dirname, '../sketch', 'sketch.ino');
+        await fs.writeFile(sketchPath, generatedSketch, 'utf-8');
+        res.send('Sketch generated and saved successfully!');
+    } catch (error) {
+        console.error('Error generating sketch:', error);
+        res.status(500).send('Error generating sketch');
+    }
+});
+
 
 module.exports = router;
