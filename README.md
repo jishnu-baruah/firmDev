@@ -86,7 +86,7 @@ To use Gemini, you need to add your API key to the `.env` file in the `backend` 
     API_KEY=YOUR_GEMINI_API_KEY
     ```
 
-## Using the Upload Function
+## Using the Upload Function(under development)
 
 To use the upload function, ensure you have Arduino CLI and Python installed on your system.
 
@@ -96,7 +96,7 @@ To use the upload function, ensure you have Arduino CLI and Python installed on 
 
 3. Connect your microcontroller device via USB.
 
-4. Use the provided interface to upload the generated firmware directly to the connected device.
+4. Use the Chrome-extension to upload the generated firmware directly to the connected device.
 
 ## Contributing
 
