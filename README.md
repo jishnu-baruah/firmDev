@@ -1,4 +1,4 @@
-# FirmDev: No-Code Firmware Development Platform
+# <img src="./logo.jpg" alt="FirmDev Logo" width="200" height="200"> FirmDev: No-Code Firmware Development Platform
 
 ## Project Structure
 
@@ -19,26 +19,36 @@ Make sure you have the following installed on your system:
 - Arduino CLI
 - Python
 
-### Installing Dependencies
+### Setting Up the Backend
 
-1. Clone the repository:
+1. Navigate to the `backend` directory:
     ```sh
-    git clone https://github.com/jishnu-baruah/firmDev.git
+    cd backend
     ```
 
-2. Navigate to the project directory:
-    ```sh
-    cd firmDev
-    ```
-
-3. Install the necessary dependencies for the root, backend, and frontend directories:
+2. Install the necessary dependencies:
     ```sh
     npm install
     ```
 
-### Starting the Servers
+3. Start the backend server:
+    ```sh
+    npm start
+    ```
 
-1. Start both the backend and frontend servers concurrently:
+### Setting Up the Frontend
+
+1. Navigate to the `frontend/firmfront` directory:
+    ```sh
+    cd frontend/firmfront
+    ```
+
+2. Install the necessary dependencies:
+    ```sh
+    npm install
+    ```
+
+3. Start the frontend server:
     ```sh
     npm start
     ```
@@ -64,6 +74,17 @@ Make sure you have the following installed on your system:
 2. Enable "Developer mode" in the top right corner.
 
 3. Click "Load unpacked" and select the `extension/extension-src` directory.
+
+### Adding Gemini API Key
+
+To use Gemini, you need to add your API key to the `.env` file in the `backend` directory.
+
+1. Create a `.env` file in the `backend` directory if it doesn't already exist.
+
+2. Add the following line to the `.env` file, replacing `API_KEY` with your actual API key:
+    ```sh
+    API_KEY=YOUR_GEMINI_API_KEY
+    ```
 
 ## Using the Upload Function
 
