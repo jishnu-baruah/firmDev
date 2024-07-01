@@ -4,7 +4,7 @@ const hardwareCategories = [
     category: 'Microcontroller/Microprocessor',
     components: [
         { id: 1, name: 'Arduino Uno', pin: 'A0-A5, D0-D13', img: {src:require("./assets/arduinoUno.png"),height: 300} },
-        { id: 2, name: 'Raspberry Pi', pin: 'GPIO1-GPIO40' },
+        { id: 2, name: 'Raspberry Pi', pin: 'GPIO1-GPIO40',img: {src:require("./assets/Rasberrypi.png"),height: 300} },
         { id: 3, name: 'ESP32', pin: 'GPIO1-GPIO39' },
         { id: 4, name: 'STM32', pin: 'PA0-PA15, PB0-PB15' }
     ],

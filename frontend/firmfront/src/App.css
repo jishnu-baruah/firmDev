@@ -132,6 +132,8 @@ hr {
 
 }
 
+
+
 .sidebar h2 {
   font-size: 1.2rem;
   margin-bottom: 10px;
@@ -170,11 +172,22 @@ hr {
 }
 .dropped-item {
   padding: 10px;
-  color: black;
+  color: white;
+  /* background-color: white; */
   border-radius: 4px;
   margin: 10px;
   cursor: move;
   display: inline-block;
+}
+/* App.css */
+
+.name-without-image {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Ensure the background color wraps the text */
+  color: #000; /* Optional: Set text color */
 }
 
 
@@ -273,6 +286,16 @@ hr {
   height: auto;
   color: white;
 
+}.drop-zone-container {
+  width: 60%;
+  position: relative;
+  padding-bottom: 60px; /* Add space for the bottom bar */
+}
+.drop-zone-container {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  padding: 20px;
 }
 
 .hhhh{
@@ -327,15 +350,6 @@ hr {
   display: flex;
 }
 
-.sidebar {
-  width: 20%;
-}
-
-.drop-zone-container {
-  width: 60%;
-  position: relative;
-  padding-bottom: 60px; /* Add space for the bottom bar */
-}
 
 .right-column {
   width: 20%;
@@ -393,31 +407,37 @@ hr {
   color: #B8B8B8;
   font-weight:500;
 }
-
-
-
-
-
-
-
 .app-container {
   display: flex;
   height: 100vh;
 }
-
-.sidebar {
-  width: 200px;
-  padding: 20px;
-}
-
-.drop-zone-container {
-  flex: 1;
-  position: relative;
-  overflow: auto;
-  padding: 20px;
-}
-
 .right-column {
   width: 300px;
   padding: 20px;
+}
+
+
+/* App.css */
+
+.drop-zone-container {
+  position: relative;
+  width: 80%; /* or any other desired width */
+  /* height: 80vh;  */
+  /* border: 2px solid #ddd; */
+  /* background-color: #f9f9f9; */
+  overflow: hidden;
+  /* margin: auto; */
+}
+
+.dropped-item {
+  position: absolute;
+}
+
+.name-without-image {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  color: #000;
 }
