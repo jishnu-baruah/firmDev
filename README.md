@@ -39,7 +39,7 @@ cd FirmDev
     <li>Install dependencies for all parts of the project:</li>
   </ol>
 
-  <pre><code>npm install
+  <pre><code>npm subinstall
 </code></pre>
 
   <ol start="2">
