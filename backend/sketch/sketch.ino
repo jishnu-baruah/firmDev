@@ -1,41 +1,22 @@
 ```arduino
-// PIR Sensor library
-#include <PIRSensor.h>
+// This Arduino sketch blinks an LED on pin 13.
 
-// PIR sensor
-PIRSensor pir(51);
+// Declare the LED pin as an output.
+const int ledPin = 13;
 
 void setup() {
-  // Set the PIR sensor pin
-  pir.setPin(51);
-
-  // Set the PIR sensor sensitivity
-  pir.setSensitivity(0);
-
-  // Set the PIR sensor delay
-  pir.setDelay(500);
-
-  // Set the PIR sensor timeout
-  pir.setTimeout(1000);
-
-  // Set the PIR sensor trigger mode
-  pir.setTriggerMode(PIR_TRIGGER_MODE_HIGH);
-
-  // Set the PIR sensor debug mode
-  pir.setDebugMode(true);
-
-  // Start the PIR sensor
-  pir.start();
+  // Set the LED pin as an output.
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  // Check if the PIR sensor is triggered
-  if (pir.isTriggered()) {
-    // Intruder detected!
-    digitalWrite(LED_BUILTIN, HIGH);
-  } else {
-    // No intruder detected
-    digitalWrite(LED_BUILTIN, LOW);
-  }
+  // Turn on the LED.
+  digitalWrite(ledPin, HIGH);
+  // Wait for 500 milliseconds.
+  delay(500);
+  // Turn off the LED.
+  digitalWrite(ledPin, LOW);
+  // Wait for 500 milliseconds.
+  delay(500);
 }
 ```

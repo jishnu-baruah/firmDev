@@ -216,7 +216,7 @@ import SubComponentSelect from './SubComponentSelect';
 import Modal from './Modal';
 import './App.css';
 
-const address = "http://192.168.222.82:5000";
+const address = "http://localhost:5000";
 
 const App = () => {
   const [droppedItems, setDroppedItems] = useState([]);
