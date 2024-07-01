@@ -4,8 +4,10 @@
   "description": "No-Code Firmware Development Platform",
   "main": "index.js",
   "scripts": {
-    "subinstall": "npm install && cd backend && npm install && cd ../frontend/firmfront && npm install",
-    "start": "concurrently \"cd backend && npm start\" \"cd frontend/firmfront && npm start\""
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend/firmfront && npm start\"",
+    "install-root": "npm install",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend/firmfront && npm install"
   },
   "dependencies": {
     "concurrently": "^7.0.0"

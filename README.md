@@ -36,15 +36,29 @@ cd FirmDev
   <h3>Setting Up</h3>
 
   <ol>
-    <li>Install dependencies for all parts of the project:</li>
+    <li>Install dependencies for the root of the project:</li>
   </ol>
 
-  <pre><code>npm subinstall
+  <pre><code>npm install
 </code></pre>
 
   <ol start="2">
-    <li>Start the backend and frontend servers concurrently:</li>
+    <li>Install dependencies for the backend:</li>
   </ol>
+
+  <pre><code>npm run install-backend
+</code></pre>
+
+  <ol start="3">
+    <li>Install dependencies for the frontend:</li>
+  </ol>
+
+  <pre><code>npm run install-frontend
+</code></pre>
+
+  <h3>Starting the Servers</h3>
+
+  <p>Start the backend and frontend servers concurrently:</p>
 
   <pre><code>npm start
 </code></pre>
