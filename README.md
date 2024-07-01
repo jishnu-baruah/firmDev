@@ -29,7 +29,7 @@
 
   <p>Clone this repository to your local machine:</p>
 
-  <pre><code>git clone https://github.com/yourusername/FirmDev.git
+  <pre><code>git clone https://github.com/jishnu-baruah/firmDev.git
 cd FirmDev
 </code></pre>
 
