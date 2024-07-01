@@ -4,6 +4,8 @@ import threading
 import queue as Queue
 import serial.tools.list_ports
 import json
+import subprocess
+import os
 
 def send_message(message):
     sys.stdout.buffer.write(struct.pack('I', len(message)))
@@ -34,6 +36,21 @@ def upload_code(port, code_url):
     # Placeholder function for actual upload logic
     pass
 
+def compile_sketch():
+    try:
+        sketch_file = ".\\sketch\\sketch.ino"
+        sketch_dir = os.path.dirname(os.path.abspath(sketch_file))
+        result = subprocess.run(['compile.bat', sketch_file], capture_output=True, text=True, shell=True)
+        send_message(json.dumps({
+            "status": "compile_finished",
+            "returncode": result.returncode,
+            "stdout": result.stdout,
+            "stderr": result.stderr,
+            "sketch_dir": sketch_dir
+        }))
+    except Exception as e:
+        send_message(json.dumps({"status": "compile_exception", "exception": str(e)}))
+
 def Main():
     queue = Queue.Queue()
     thread = threading.Thread(target=read_thread_func, args=(queue,))
@@ -53,6 +70,8 @@ def Main():
                 code_url = message_json.get('code_url')
                 upload_code(port, code_url)
                 send_message('{"status": "upload_started"}')
+            elif message_json.get('command') == 'compile_sketch':
+                compile_sketch()
 
 if __name__ == '__main__':
     Main()
