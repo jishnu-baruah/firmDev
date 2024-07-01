@@ -1,50 +1,41 @@
 ```arduino
-// Libraries
-#include <Arduino.h>
-#include <WiFi.h>
-#include <ESP32Camera.h>
+// PIR Sensor library
+#include <PIRSensor.h>
 
-// Set up the ESP32-CAM
-Camera myCamera;
-
-// Set up the Wi-Fi connection
-const char* ssid = "N1";
-const char* password = "jishnu@1st";
+// PIR sensor
+PIRSensor pir(51);
 
 void setup() {
-  // Initialize the serial port
-  Serial.begin(115200);
+  // Set the PIR sensor pin
+  pir.setPin(51);
 
-  // Initialize the ESP32-CAM
-  myCamera.begin();
+  // Set the PIR sensor sensitivity
+  pir.setSensitivity(0);
 
-  // Connect to the Wi-Fi network
-  Serial.println("Connecting to Wi-Fi...");
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("Connected.");
+  // Set the PIR sensor delay
+  pir.setDelay(500);
 
-  // Start the face tracking
-  myCamera.startFaceTracking();
+  // Set the PIR sensor timeout
+  pir.setTimeout(1000);
+
+  // Set the PIR sensor trigger mode
+  pir.setTriggerMode(PIR_TRIGGER_MODE_HIGH);
+
+  // Set the PIR sensor debug mode
+  pir.setDebugMode(true);
+
+  // Start the PIR sensor
+  pir.start();
 }
 
 void loop() {
-  // Read the face tracking data
-  camera_fb_t* fb = myCamera.readFaces();
-
-  // Draw the face tracking data
-  for (size_t i = 0; i < fb->num; i++) {
-    // Draw a rectangle around the face
-    myCamera.drawFaceBounds(i, COLOR_GREEN);
-
-    // Draw a circle on the face
-    myCamera.drawCircle(fb->x + fb->w / 2, fb->y + fb->h / 2, 5, COLOR_RED);
+  // Check if the PIR sensor is triggered
+  if (pir.isTriggered()) {
+    // Intruder detected!
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    // No intruder detected
+    digitalWrite(LED_BUILTIN, LOW);
   }
-
-  // Send the image to the web server
-  myCamera.displayWebServer();
 }
 ```
