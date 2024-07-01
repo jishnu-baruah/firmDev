@@ -1,14 +1,79 @@
-<!doctype html>
-<html>
-  <head>
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <button id="connect-button">Connect</button>
-    <button id="list-ports-button">List Ports</button>
-    <select id="ports-list"></select>
-    <input id="code-url" type="text" placeholder="Code URL"/>
-    <button id="upload-button">Upload</button>
-    <div id="response"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FirmDev Extension</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+      background-color: #171717; /* Dark background color */
+      color: white; /* Text color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 80%;
+      max-width: 1000px; /* Increased max-width */
+      background-color: #333; /* Darker container background color */
+      border: 1px solid #555;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #response {
+      border: 1px solid #555;
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      background-color: #222; /* Darker response background color */
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #555; /* Dark button background color */
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #777; /* Darker hover color */
+    }
+    select, input[type="text"] {
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #333; /* Dark form background color */
+      color: white; /* Form text color */
+      border: 1px solid #555; /* Form border color */
+    }
+    select {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FirmDev Extension</h1>
+    <!-- <div id="response"></div> -->
+    <button id="connect-button">Connect to Native Host</button>
+    <button id="list-ports-button" style="display: none;">List Ports</button>
+    <select id="ports-list" style="display: none;"></select><br>
+    <!-- <input type="text" id="code-url" placeholder="Code URL" style="display: none;"><br> -->
+    <button id="upload-button" style="display: none;">Upload Code</button>
+    <button id="compile-button" style="display: none;">Compile Sketch</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
 </html>

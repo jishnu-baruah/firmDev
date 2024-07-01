@@ -1,22 +1,29 @@
 ```arduino
-// This Arduino sketch blinks an LED on pin 13.
+// Define the pins for the components
+const int pirPin = 2; // PIR sensor signal pin
+const int ledPin = 13; // LED pin
 
-// Declare the LED pin as an output.
-const int ledPin = 13;
+// Define the PIR sensor state
+int pirState = LOW;
 
 void setup() {
-  // Set the LED pin as an output.
+  // Set the LED pin as output
   pinMode(ledPin, OUTPUT);
+
+  // Set the PIR sensor pin as input
+  pinMode(pirPin, INPUT);
 }
 
 void loop() {
-  // Turn on the LED.
-  digitalWrite(ledPin, HIGH);
-  // Wait for 500 milliseconds.
-  delay(500);
-  // Turn off the LED.
-  digitalWrite(ledPin, LOW);
-  // Wait for 500 milliseconds.
-  delay(500);
+  // Read the PIR sensor state
+  pirState = digitalRead(pirPin);
+
+  // If the PIR sensor detects motion, turn on the LED
+  if (pirState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // If the PIR sensor does not detect motion, turn off the LED
+    digitalWrite(ledPin, LOW);
+  }
 }
 ```
