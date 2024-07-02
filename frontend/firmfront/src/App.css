@@ -171,11 +171,11 @@ hr {
   transform: translate(-50%, -50%);
 }
 .dropped-item {
-  padding: 10px;
+  /* padding: 10px; */
   color: white;
   /* background-color: white; */
   border-radius: 4px;
-  margin: 10px;
+  /* margin: 10px; */
   cursor: move;
   display: inline-block;
 }
@@ -221,6 +221,20 @@ hr {
 .right-column button:hover {
   background-color: #eee;
 }
+.new-board-button {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.new-board-button:hover {
+  background-color: #eee;
+}
+
 .context-menu li:hover {
   background-color: #eee;
 }
