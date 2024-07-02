@@ -56,6 +56,18 @@ cd FirmDev
   <pre><code>npm run install-frontend
 </code></pre>
 
+  <ol start="4">
+    <li>Install <code>concurrently</code> globally if not already installed:</li>
+  </ol>
+
+  <pre><code>npm install -g concurrently
+</code></pre>
+
+  <p>If you encounter permission issues, try running:</p>
+
+  <pre><code>sudo npm install -g concurrently
+</code></pre>
+
   <h3>Starting the Servers</h3>
 
   <p>Start the backend and frontend servers concurrently:</p>
