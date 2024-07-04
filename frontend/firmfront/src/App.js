@@ -545,6 +545,7 @@ const App = () => {
   const [contextMenu, setContextMenu] = useState({ isVisible: false, position: { x: 0, y: 0 }, itemId: null });
   const [editingItem, setEditingItem] = useState(null);
   const [properties, setProperties] = useState({ name: '', pin: '', vcc: '', gnd: '' });
+  
   const [showDummyParagraph, setShowDummyParagraph] = useState(false);
   const dropZoneRef = useRef(null);
   const [sketchContent, setSketchContent] = useState('');
