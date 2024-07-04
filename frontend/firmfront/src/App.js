@@ -76,36 +76,6 @@
 //     }
 //   };
 
-//   // const handleGenerate = async () => {
-//   //   const projectDetails = searchTerm;
-//   //   const componentData = droppedItems.map(item => itemProperties[item]);
-
-//   //   if (!projectDetails && componentData.length === 0) {
-//   //     alert('Please provide project details and component data.');
-//   //     return;
-//   //   }
-
-//   //   try {
-//   //     const response = await fetch(address + '/sketch/generate', {
-//   //       method: 'POST',
-//   //       headers: {
-//   //         'Content-Type': 'application/json'
-//   //       },
-//   //       body: JSON.stringify({ projectDetails, componentData })
-//   //     });
-
-//   //     if (!response.ok) {
-//   //       throw new Error('Failed to generate sketch');
-//   //     }
-
-//   //     const resultMessage = await response.text();
-//   //     alert(resultMessage);
-//   //     alert('Click on the "Show Sketch" button to view the code');
-//   //   } catch (error) {
-//   //     console.error('Error generating sketch:', error);
-//   //     alert('Error generating sketch.');
-//   //   }
-//   // };
 //   const handleGenerate = async () => {
 //     const projectDetails = searchTerm;
 //     const componentData = droppedItems.map(item => itemProperties[item]);
